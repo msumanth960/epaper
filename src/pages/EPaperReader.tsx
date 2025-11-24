@@ -6,13 +6,6 @@ import {
   Typography,
   Button,
   IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Card,
-  CardContent,
-  Chip,
   Divider,
 } from '@mui/material';
 import {
@@ -21,10 +14,8 @@ import {
   ZoomIn as ZoomInIcon,
   ZoomOut as ZoomOutIcon,
   Download as DownloadIcon,
-  Description as DescriptionIcon,
 } from '@mui/icons-material';
-import { ePapers, getIncidentsByStateDistrict } from '../data/mockData';
-import { formatDistanceToNow } from 'date-fns';
+import { ePapers } from '../data/mockData';
 
 export default function EPaperReader() {
   const { id } = useParams<{ id: string }>();
@@ -45,8 +36,6 @@ export default function EPaperReader() {
     );
   }
 
-  const relatedIncidents = getIncidentsByStateDistrict(ePaper.state, ePaper.district);
-
   const handlePrevPage = () => {
     setCurrentPage((prev) => Math.max(1, prev - 1));
   };
@@ -61,19 +50,6 @@ export default function EPaperReader() {
 
   const handleZoomOut = () => {
     setZoom((prev) => Math.max(50, prev - 10));
-  };
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Reported':
-        return 'warning';
-      case 'Under Review':
-        return 'info';
-      case 'Resolved':
-        return 'success';
-      default:
-        return 'default';
-    }
   };
 
   return (
@@ -94,8 +70,8 @@ export default function EPaperReader() {
       </Typography>
 
       <Box sx={{ display: 'flex', gap: 3, mt: 3 }}>
-        {/* Page List */}
-        <Paper sx={{ width: 200, flexShrink: 0, p: 2 }}>
+        {/* Page List - Hidden for now */}
+        {/* <Paper sx={{ width: 200, flexShrink: 0, p: 2 }}>
           <Typography variant="h6" gutterBottom>
             Pages
           </Typography>
@@ -112,7 +88,7 @@ export default function EPaperReader() {
               </ListItem>
             ))}
           </List>
-        </Paper>
+        </Paper> */}
 
         {/* Main Viewer */}
         <Box sx={{ flexGrow: 1 }}>
@@ -168,8 +144,8 @@ export default function EPaperReader() {
           </Paper>
         </Box>
 
-        {/* Related Incidents */}
-        <Paper sx={{ width: 300, flexShrink: 0, p: 2 }}>
+        {/* Related Incidents - Hidden for now */}
+        {/* <Paper sx={{ width: 300, flexShrink: 0, p: 2 }}>
           <Typography variant="h6" gutterBottom>
             Related Incidents
           </Typography>
@@ -204,7 +180,7 @@ export default function EPaperReader() {
               ))}
             </Box>
           )}
-        </Paper>
+        </Paper> */}
       </Box>
     </Box>
   );
