@@ -13,7 +13,6 @@ import {
   MenuItem,
   Paper,
 } from '@mui/material';
-import { Newspaper as NewspaperIcon } from '@mui/icons-material';
 import { ePapers, states, getDistrictsByState } from '../data/mockData';
 
 export default function EPapersLibrary() {
@@ -126,16 +125,15 @@ export default function EPapersLibrary() {
           <Grid item xs={12} sm={6} md={4} key={paper.id}>
             <Card>
               <Box
+                component="img"
+                src={paper.thumbnailUrl}
+                alt={paper.editionName}
                 sx={{
                   height: 200,
-                  bgcolor: 'grey.300',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  width: '100%',
+                  objectFit: 'cover',
                 }}
-              >
-                <NewspaperIcon sx={{ fontSize: 80, color: 'grey.600' }} />
-              </Box>
+              />
               <CardContent>
                 <Typography variant="h6" gutterBottom>
                   {paper.editionName}
@@ -154,6 +152,22 @@ export default function EPapersLibrary() {
                   variant="contained"
                   fullWidth
                   onClick={() => navigate(`/reader/${paper.id}`)}
+                  sx={{
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    color: 'white',
+                    borderRadius: 2,
+                    textTransform: 'none',
+                    py: 0.5,
+                    fontSize: '0.75rem',
+                    fontWeight: 500,
+                    boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)',
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%)',
+                      boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+                      transform: 'translateY(-1px)',
+                    },
+                    transition: 'all 0.3s ease',
+                  }}
                 >
                   Open e-paper
                 </Button>

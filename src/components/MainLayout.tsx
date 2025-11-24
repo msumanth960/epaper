@@ -17,6 +17,10 @@ import {
   Badge,
   alpha,
   styled,
+  Menu,
+  MenuItem,
+  Divider,
+  ListItemAvatar,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -27,6 +31,9 @@ import {
   CloudUpload as CloudUploadIcon,
   RssFeed as RssFeedIcon,
   Report as ReportIcon,
+  Article as ArticleIcon,
+  Warning as WarningIcon,
+  CheckCircle as CheckCircleIcon,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -78,8 +85,44 @@ const menuItems = [
   { text: 'Report Incident', icon: <ReportIcon />, path: '/report-incident' },
 ];
 
+const dummyNotifications = [
+  {
+    id: 1,
+    title: 'New E-Paper Published',
+    message: 'Hyderabad Morning Edition is now available',
+    time: '5 minutes ago',
+    icon: <ArticleIcon color="primary" />,
+    read: false,
+  },
+  {
+    id: 2,
+    title: 'Incident Resolved',
+    message: 'Traffic accident on Banjara Hills Road has been cleared',
+    time: '1 hour ago',
+    icon: <CheckCircleIcon color="success" />,
+    read: false,
+  },
+  {
+    id: 3,
+    title: 'Weather Alert',
+    message: 'Heavy rainfall warning for Visakhapatnam',
+    time: '2 hours ago',
+    icon: <WarningIcon color="warning" />,
+    read: false,
+  },
+  {
+    id: 4,
+    title: 'New Incident Report',
+    message: 'Power outage reported in Guntur',
+    time: '3 hours ago',
+    icon: <ReportIcon color="error" />,
+    read: true,
+  },
+];
+
 export default function MainLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [notificationAnchor, setNotificationAnchor] = useState<null | HTMLElement>(null);
   const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
@@ -90,6 +133,16 @@ export default function MainLayout() {
     navigate(path);
     setMobileOpen(false);
   };
+
+  const handleNotificationClick = (event: React.MouseEvent<HTMLElement>) => {
+    setNotificationAnchor(event.currentTarget);
+  };
+
+  const handleNotificationClose = () => {
+    setNotificationAnchor(null);
+  };
+
+  const unreadCount = dummyNotifications.filter(n => !n.read).length;
 
   const drawer = (
     <div>
@@ -149,8 +202,8 @@ export default function MainLayout() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <IconButton size="large" color="inherit">
-              <Badge badgeContent={4} color="error">
+            <IconButton size="large" color="inherit" onClick={handleNotificationClick}>
+              <Badge badgeContent={unreadCount} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -160,6 +213,56 @@ export default function MainLayout() {
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* Notifications Menu */}
+      <Menu
+        anchorEl={notificationAnchor}
+        open={Boolean(notificationAnchor)}
+        onClose={handleNotificationClose}
+        PaperProps={{
+          sx: {
+            width: 360,
+            maxHeight: 480,
+          },
+        }}
+      >
+        <Box sx={{ px: 2, py: 1.5 }}>
+          <Typography variant="h6">Notifications</Typography>
+        </Box>
+        <Divider />
+        {dummyNotifications.map((notification) => (
+          <MenuItem
+            key={notification.id}
+            onClick={handleNotificationClose}
+            sx={{
+              py: 1.5,
+              backgroundColor: notification.read ? 'transparent' : 'action.hover',
+            }}
+          >
+            <ListItemAvatar>
+              <Avatar sx={{ bgcolor: 'transparent' }}>
+                {notification.icon}
+              </Avatar>
+            </ListItemAvatar>
+            <Box sx={{ flexGrow: 1 }}>
+              <Typography variant="subtitle2">{notification.title}</Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
+                {notification.message}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {notification.time}
+              </Typography>
+            </Box>
+          </MenuItem>
+        ))}
+        <Divider />
+        <MenuItem onClick={handleNotificationClose} sx={{ justifyContent: 'center', py: 1 }}>
+          <Typography variant="body2" color="primary">
+            View All Notifications
+          </Typography>
+        </MenuItem>
+      </Menu>
+
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}

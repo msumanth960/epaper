@@ -17,6 +17,21 @@ const theme = createTheme({
     secondary: {
       main: '#dc004e',
     },
+    background: {
+      default: '#f5f7fa',
+      paper: '#ffffff',
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+          backgroundAttachment: 'fixed',
+          minHeight: '100vh',
+        },
+      },
+    },
   },
 });
 

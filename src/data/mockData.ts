@@ -28,16 +28,12 @@ export interface Incident {
 
 export const states: State[] = [
   {
-    name: 'Maharashtra',
-    districts: ['Pune', 'Nagpur', 'Mumbai']
+    name: 'Telangana',
+    districts: ['Hyderabad', 'Warangal', 'Nizamabad', 'Karimnagar', 'Khammam']
   },
   {
-    name: 'Karnataka',
-    districts: ['Bengaluru', 'Mysuru']
-  },
-  {
-    name: 'Gujarat',
-    districts: ['Ahmedabad']
+    name: 'Andhra Pradesh',
+    districts: ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Tirupati', 'Kakinada']
   }
 ];
 
@@ -45,61 +41,61 @@ export const ePapers: EPaper[] = [
   {
     id: 'ep1',
     date: '2025-11-24',
-    state: 'Maharashtra',
-    district: 'Pune',
-    editionName: 'Pune Morning Edition',
-    pdfUrl: '/dummy/pune-morning.pdf',
-    thumbnailUrl: '/dummy/thumb1.jpg',
+    state: 'Telangana',
+    district: 'Hyderabad',
+    editionName: 'Hyderabad Morning Edition',
+    pdfUrl: '/dummy/hyderabad-morning.pdf',
+    thumbnailUrl: '/images/hyderabad-morning.jpg',
     pageCount: 12
   },
   {
     id: 'ep2',
     date: '2025-11-24',
-    state: 'Maharashtra',
-    district: 'Mumbai',
-    editionName: 'Mumbai Daily',
-    pdfUrl: '/dummy/mumbai-daily.pdf',
-    thumbnailUrl: '/dummy/thumb2.jpg',
+    state: 'Andhra Pradesh',
+    district: 'Visakhapatnam',
+    editionName: 'Vizag Daily',
+    pdfUrl: '/dummy/vizag-daily.pdf',
+    thumbnailUrl: '/images/vizag-daily.jpg',
     pageCount: 16
   },
   {
     id: 'ep3',
     date: '2025-11-24',
-    state: 'Karnataka',
-    district: 'Bengaluru',
-    editionName: 'Bengaluru Express',
-    pdfUrl: '/dummy/bengaluru-express.pdf',
-    thumbnailUrl: '/dummy/thumb3.jpg',
+    state: 'Andhra Pradesh',
+    district: 'Vijayawada',
+    editionName: 'Vijayawada Express',
+    pdfUrl: '/dummy/vijayawada-express.pdf',
+    thumbnailUrl: '/images/vijayawada-express.jpg',
     pageCount: 14
   },
   {
     id: 'ep4',
     date: '2025-11-23',
-    state: 'Gujarat',
-    district: 'Ahmedabad',
-    editionName: 'Ahmedabad Times',
-    pdfUrl: '/dummy/ahmedabad-times.pdf',
-    thumbnailUrl: '/dummy/thumb4.jpg',
+    state: 'Telangana',
+    district: 'Warangal',
+    editionName: 'Warangal Times',
+    pdfUrl: '/dummy/warangal-times.pdf',
+    thumbnailUrl: '/images/warangal-times.jpg',
     pageCount: 10
   },
   {
     id: 'ep5',
     date: '2025-11-23',
-    state: 'Maharashtra',
-    district: 'Nagpur',
-    editionName: 'Nagpur Chronicle',
-    pdfUrl: '/dummy/nagpur-chronicle.pdf',
-    thumbnailUrl: '/dummy/thumb5.jpg',
+    state: 'Andhra Pradesh',
+    district: 'Guntur',
+    editionName: 'Guntur Chronicle',
+    pdfUrl: '/dummy/guntur-chronicle.pdf',
+    thumbnailUrl: '/images/guntur-chronicle.jpg',
     pageCount: 8
   },
   {
     id: 'ep6',
     date: '2025-11-24',
-    state: 'Karnataka',
-    district: 'Mysuru',
-    editionName: 'Mysuru Herald',
-    pdfUrl: '/dummy/mysuru-herald.pdf',
-    thumbnailUrl: '/dummy/thumb6.jpg',
+    state: 'Telangana',
+    district: 'Karimnagar',
+    editionName: 'Karimnagar Herald',
+    pdfUrl: '/dummy/karimnagar-herald.pdf',
+    thumbnailUrl: '/images/karimnagar-herald.jpg',
     pageCount: 10
   }
 ];
@@ -107,31 +103,31 @@ export const ePapers: EPaper[] = [
 export const incidents: Incident[] = [
   {
     id: 'inc1',
-    title: 'Traffic Accident on MG Road',
-    state: 'Karnataka',
-    district: 'Bengaluru',
+    title: 'Traffic Accident on Banjara Hills Road',
+    state: 'Telangana',
+    district: 'Hyderabad',
     category: 'Accident',
     timestamp: '2025-11-24T05:30:00',
-    description: 'Major traffic accident involving three vehicles on MG Road causing severe congestion.',
+    description: 'Major traffic accident involving three vehicles on Banjara Hills Road causing severe congestion.',
     status: 'Under Review',
     reportType: 'Citizen'
   },
   {
     id: 'inc2',
     title: 'Heavy Rainfall Warning',
-    state: 'Maharashtra',
-    district: 'Mumbai',
+    state: 'Andhra Pradesh',
+    district: 'Visakhapatnam',
     category: 'Weather',
     timestamp: '2025-11-24T04:00:00',
-    description: 'IMD issues heavy rainfall warning for Mumbai and surrounding areas for next 48 hours.',
+    description: 'IMD issues heavy rainfall warning for Visakhapatnam and surrounding coastal areas for next 48 hours.',
     status: 'Reported',
     reportType: 'Official'
   },
   {
     id: 'inc3',
-    title: 'Local Election Results Announced',
-    state: 'Gujarat',
-    district: 'Ahmedabad',
+    title: 'Municipal Election Results Announced',
+    state: 'Andhra Pradesh',
+    district: 'Vijayawada',
     category: 'Politics',
     timestamp: '2025-11-23T22:00:00',
     description: 'Municipal corporation election results declared with surprising outcomes in several wards.',
@@ -140,20 +136,20 @@ export const incidents: Incident[] = [
   },
   {
     id: 'inc4',
-    title: 'Theft Reported at Commercial Complex',
-    state: 'Maharashtra',
-    district: 'Pune',
+    title: 'Theft Reported at Shopping Mall',
+    state: 'Telangana',
+    district: 'Hyderabad',
     category: 'Crime',
     timestamp: '2025-11-24T01:15:00',
-    description: 'Multiple shops in Aundh commercial complex reported theft during night hours.',
+    description: 'Multiple shops in Kukatpally shopping mall reported theft during night hours.',
     status: 'Under Review',
     reportType: 'Citizen'
   },
   {
     id: 'inc5',
     title: 'Road Construction Delays',
-    state: 'Karnataka',
-    district: 'Mysuru',
+    state: 'Telangana',
+    district: 'Warangal',
     category: 'Other',
     timestamp: '2025-11-23T18:30:00',
     description: 'Major road construction project facing delays due to material shortage.',
@@ -163,33 +159,33 @@ export const incidents: Incident[] = [
   {
     id: 'inc6',
     title: 'Power Outage in Central Areas',
-    state: 'Maharashtra',
-    district: 'Nagpur',
+    state: 'Andhra Pradesh',
+    district: 'Guntur',
     category: 'Other',
     timestamp: '2025-11-24T06:00:00',
-    description: 'Widespread power outage affecting central Nagpur areas, restoration work in progress.',
+    description: 'Widespread power outage affecting central Guntur areas, restoration work in progress.',
     status: 'Under Review',
     reportType: 'Official'
   },
   {
     id: 'inc7',
     title: 'Cyclone Alert Issued',
-    state: 'Gujarat',
-    district: 'Ahmedabad',
+    state: 'Andhra Pradesh',
+    district: 'Kakinada',
     category: 'Weather',
     timestamp: '2025-11-23T20:00:00',
-    description: 'Cyclone warning issued for coastal Gujarat, residents advised to take precautions.',
+    description: 'Cyclone warning issued for coastal Andhra Pradesh, residents advised to take precautions.',
     status: 'Resolved',
     reportType: 'Official'
   },
   {
     id: 'inc8',
-    title: 'Protest March Downtown',
-    state: 'Maharashtra',
-    district: 'Mumbai',
+    title: 'Farmers Protest March',
+    state: 'Telangana',
+    district: 'Nizamabad',
     category: 'Politics',
     timestamp: '2025-11-24T03:00:00',
-    description: 'Large protest march organized downtown demanding policy changes.',
+    description: 'Large farmers protest march organized demanding better crop prices and support.',
     status: 'Reported',
     reportType: 'Citizen'
   }

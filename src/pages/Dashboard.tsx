@@ -127,16 +127,15 @@ export default function Dashboard() {
         {todayEPapers.map((paper) => (
           <Card key={paper.id} sx={{ minWidth: 280, flexShrink: 0 }}>
             <Box
+              component="img"
+              src={paper.thumbnailUrl}
+              alt={paper.editionName}
               sx={{
                 height: 140,
-                bgcolor: 'grey.300',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                width: '100%',
+                objectFit: 'cover',
               }}
-            >
-              <NewspaperIcon sx={{ fontSize: 64, color: 'grey.600' }} />
-            </Box>
+            />
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 {paper.editionName}
@@ -154,6 +153,23 @@ export default function Dashboard() {
                 size="small"
                 variant="contained"
                 onClick={() => navigate(`/reader/${paper.id}`)}
+                sx={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  color: 'white',
+                  borderRadius: 2,
+                  textTransform: 'none',
+                  px: 2,
+                  py: 0.5,
+                  fontSize: '0.75rem',
+                  fontWeight: 500,
+                  boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%)',
+                    boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+                    transform: 'translateY(-1px)',
+                  },
+                  transition: 'all 0.3s ease',
+                }}
               >
                 Read
               </Button>
