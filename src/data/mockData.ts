@@ -44,7 +44,7 @@ export const ePapers: EPaper[] = [
     state: 'Telangana',
     district: 'Hyderabad',
     editionName: 'Hyderabad Morning Edition',
-    pdfUrl: '/dummy/hyderabad-morning.pdf',
+    pdfUrl: '/pdfs/mnadeepam.pdf',
     thumbnailUrl: '/images/hyderabad-morning.jpg',
     pageCount: 12
   },
@@ -54,7 +54,7 @@ export const ePapers: EPaper[] = [
     state: 'Andhra Pradesh',
     district: 'Visakhapatnam',
     editionName: 'Vizag Daily',
-    pdfUrl: '/dummy/vizag-daily.pdf',
+    pdfUrl: '/pdfs/ts-main15.pdf',
     thumbnailUrl: '/images/vizag-daily.jpg',
     pageCount: 16
   },
@@ -64,7 +64,7 @@ export const ePapers: EPaper[] = [
     state: 'Andhra Pradesh',
     district: 'Vijayawada',
     editionName: 'Vijayawada Express',
-    pdfUrl: '/dummy/vijayawada-express.pdf',
+    pdfUrl: '/pdfs/ts-main152.pdf',
     thumbnailUrl: '/images/vijayawada-express.jpg',
     pageCount: 14
   },
@@ -74,7 +74,7 @@ export const ePapers: EPaper[] = [
     state: 'Telangana',
     district: 'Warangal',
     editionName: 'Warangal Times',
-    pdfUrl: '/dummy/warangal-times.pdf',
+    pdfUrl: '/pdfs/mnadeepam.pdf',
     thumbnailUrl: '/images/warangal-times.jpg',
     pageCount: 10
   },
@@ -84,7 +84,7 @@ export const ePapers: EPaper[] = [
     state: 'Andhra Pradesh',
     district: 'Guntur',
     editionName: 'Guntur Chronicle',
-    pdfUrl: '/dummy/guntur-chronicle.pdf',
+    pdfUrl: '/pdfs/ts-main15.pdf',
     thumbnailUrl: '/images/guntur-chronicle.jpg',
     pageCount: 8
   },
@@ -94,7 +94,7 @@ export const ePapers: EPaper[] = [
     state: 'Telangana',
     district: 'Karimnagar',
     editionName: 'Karimnagar Herald',
-    pdfUrl: '/dummy/karimnagar-herald.pdf',
+    pdfUrl: '/pdfs/ts-main152.pdf',
     thumbnailUrl: '/images/karimnagar-herald.jpg',
     pageCount: 10
   }

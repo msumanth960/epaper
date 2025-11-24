@@ -150,21 +150,21 @@ export default function EPaperReader() {
           <Paper
             sx={{
               height: 600,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
               bgcolor: 'grey.100',
+              overflow: 'hidden',
+              position: 'relative',
             }}
           >
-            <Box sx={{ textAlign: 'center' }}>
-              <DescriptionIcon sx={{ fontSize: 120, color: 'grey.400', mb: 2 }} />
-              <Typography variant="h6" color="text.secondary">
-                E-paper Page {currentPage} Preview
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Zoom: {zoom}%
-              </Typography>
-            </Box>
+            <Box
+              component="iframe"
+              src={`${ePaper.pdfUrl}#page=${currentPage}&zoom=${zoom}`}
+              sx={{
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+              title={`${ePaper.editionName} - Page ${currentPage}`}
+            />
           </Paper>
         </Box>
 
